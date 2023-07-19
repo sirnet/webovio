@@ -54,7 +54,7 @@ function building () {
         'app/img/*.*',
         '!app/img/*.svg',
         'app/img/sprite.svg',
-        'app/fonts/*.*',
+        'app/fonts/src/*.*',
         'app/js/main.min.js',
         'app/*.html'
     ], {base: 'app'})
@@ -97,9 +97,9 @@ function fonts () {
         .pipe(fonter({
             formats: ['woff', 'ttf']
         }))
-        .pipe(src('app/fonts/*.ttf'))
+        .pipe(src('app/fonts/src/*.ttf'))
         .pipe(ttf2woff2())
-        .pipe(dest('app/fonts'))
+        .pipe(dest('app/fonts/src'))
 }
 
 function pages () {
